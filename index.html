@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <!-- Open Graph / Social Preview -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Yuu Star Gallery — แกลเลอรีของยู รวมภาพ ดนตรี และบรรยากาศแห่งแสงดาว">
+  <meta property="og:title" content="Yuu Star Gallery">
+  <meta property="og:description" content="Yuu Star Gallery — แกลเลอรีของยู รวมภาพ ดนตรี และบรรยากาศแห่งแสงดาว">
+  <meta property="og:image" content="https://your-domain.com/images/S__10338309.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-domain.com">
+  <meta name="theme-color" content="#ffe6f7">
+
+  <title>ครบรอบ5เดือน</title>
+  <link rel="icon" href="images/S_10338309.jpg" type="image/png">
+
+  <!-- Preload main images for perceived performance -->
+  <link rel="preload" as="image" href="images/S__10338309.jpg">
+  <link rel="preload" as="image" href="images/S__10338311.jpg">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- ฟองตามเมาส์ -->
+  <div class="bubble" id="cursorBubble" aria-hidden="true"></div>
+
+  <!-- ดาวพื้นหลัง -->
+  <div class="stars-bg" id="stars" aria-hidden="true"></div>
+
+  <button class="music-btn" id="musicBtn" aria-pressed="false" aria-label="เล่น/หยุดเพลงพื้นหลัง" onclick="toggleMusic()">🎵 เล่นเพลง</button>
+  <button id="topBtn" onclick="scrollToTop()" aria-label="เลื่อนขึ้นด้านบน">⬆️ บนสุด</button>
+
+  <!-- ---------------- Carousel (อัตโนมัติ) เพิ่มไว้บนสุด ---------------- -->
+  <div class="carousel" aria-label="Carousel ของรูปภาพ">
+    <div class="image-container" id="carouselImages">
+      <!-- ชุดภาพ (ใช้ภาพทั้งหมดจาก gallery) -->
+      <img src="images/S__10338309.jpg" alt="Portrait of Yuu under star lights" tabindex="0" onclick="openLightbox(0)" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox(0)">
+      <img src="images/S__10338311.jpg" alt="Yuu holding a warm cup" tabindex="0" onclick="openLightbox(1)" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox(1)">
+      <img src="images/S__10338312.jpg" alt="Artwork - pastel starlight" tabindex="0" onclick="openLightbox(2)" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox(2)">
+      <img src="images/S__10346498_0.jpg" alt="Nightscape - glowing horizon" tabindex="0" onclick="openLightbox(3)" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox(3)">
+      <img src="images/S__10346500_0.jpg" alt="Close-up texture - dreamy" tabindex="0" onclick="openLightbox(4)" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox(4)">
+      <img src="images/S__10346501_0.jpg" alt="Landscape with moon" tabindex="0" onclick="openLightbox(5)" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox(5)">
+      <img src="images/S__10420226_0.jpg" alt="Minimal composition" tabindex="0" onclick="openLightbox(6)" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox(6)">
+      <img src="images/S__10420228_0.jpg" alt="Soft pastel gradient" tabindex="0" onclick="openLightbox(7)" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox(7)">
+      <img src="images/S__10420229_0.jpg" alt="Portrait silhouette" tabindex="0" onclick="openLightbox(8)" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox(8)">
+      <img src="images/S__10420230_0.jpg" alt="Star field - long exposure" tabindex="0" onclick="openLightbox(9)" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox(9)">
+      <img src="images/S__10420232_0.jpg" alt="Abstract - flowing lines" tabindex="0" onclick="openLightbox(10)" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox(10)">
+      <img src="images/S__10420233_0.jpg" alt="Quiet morning glow" tabindex="0" onclick="openLightbox(11)" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox(11)">
+
+      <!-- ชุดซ้ำ (เพื่อให้แอนิเมชันวนเนียน) -->
+      <img src="images/S__10338309.jpg" alt="" aria-hidden="true">
+      <img src="images/S__10338311.jpg" alt="" aria-hidden="true">
+      <img src="images/S__10338312.jpg" alt="" aria-hidden="true">
+      <img src="images/S__10346498_0.jpg" alt="" aria-hidden="true">
+      <img src="images/S__10346500_0.jpg" alt="" aria-hidden="true">
+      <img src="images/S__10346501_0.jpg" alt="" aria-hidden="true">
+      <img src="images/S__10420226_0.jpg" alt="" aria-hidden="true">
+      <img src="images/S__10420228_0.jpg" alt="" aria-hidden="true">
+      <img src="images/S__10420229_0.jpg" alt="" aria-hidden="true">
+      <img src="images/S__10420230_0.jpg" alt="" aria-hidden="true">
+      <img src="images/S__10420232_0.jpg" alt="" aria-hidden="true">
+      <img src="images/S__10420233_0.jpg" alt="" aria-hidden="true">
+    </div>
+  </div>
+
+  <h1>ขอบคุณที่อยู่ด้วยกันมา5เดือนนะคนเก่ง</h1>
+
+  <div class="content">
+    <div class="text-box">
+      <h2>Yuu</h2>
+      <p>
+        รักนะครับ<br>
+        ขอบคุณสำหรับทุกๆเรื่องตลอด5เดือนนะครับ<br>
+        พี่ขอให้ยูอยู่กับพี่ไปนานๆนะค้าบบบบบ
+      </p>
+    </div>
+
+    <div class="gallery" id="gallery" aria-label="แกลเลอรีรูปภาพ">
+      <!-- ใช้ gallery-item และ alt ที่สื่อความหมายมากขึ้น -->
+      <figure class="gallery-item">
+        <img src="images/S__10338309.jpg" alt="Portrait of Yuu under star lights" loading="lazy" decoding="async" fetchpriority="high" tabindex="0">
+      </figure>
+      <figure class="gallery-item">
+        <img src="images/S__10338311.jpg" alt="Yuu holding a warm cup" loading="lazy" decoding="async" tabindex="0">
+      </figure>
+      <figure class="gallery-item">
+        <img src="images/S__10338312.jpg" alt="Artwork - pastel starlight" loading="lazy" decoding="async" tabindex="0">
+      </figure>
+      <figure class="gallery-item">
+        <img src="images/S__10346498_0.jpg" alt="Nightscape - glowing horizon" loading="lazy" decoding="async" tabindex="0">
+      </figure>
+      <figure class="gallery-item">
+        <img src="images/S__10346500_0.jpg" alt="Close-up texture - dreamy" loading="lazy" decoding="async" tabindex="0">
+      </figure>
+      <figure class="gallery-item">
+        <img src="images/S__10346501_0.jpg" alt="Landscape with moon" loading="lazy" decoding="async" tabindex="0">
+      </figure>
+      <figure class="gallery-item">
+        <img src="images/S__10420226_0.jpg" alt="Minimal composition" loading="lazy" decoding="async" tabindex="0">
+      </figure>
+      <figure class="gallery-item">
+        <img src="images/S__10420228_0.jpg" alt="Soft pastel gradient" loading="lazy" decoding="async" tabindex="0">
+      </figure>
+      <figure class="gallery-item">
+        <img src="images/S__10420229_0.jpg" alt="Portrait silhouette" loading="lazy" decoding="async" tabindex="0">
+      </figure>
+      <figure class="gallery-item">
+        <img src="images/S__10420230_0.jpg" alt="Star field - long exposure" loading="lazy" decoding="async" tabindex="0">
+      </figure>
+      <figure class="gallery-item">
+        <img src="images/S__10420232_0.jpg" alt="Abstract - flowing lines" loading="lazy" decoding="async" tabindex="0">
+      </figure>
+      <figure class="gallery-item">
+        <img src="images/S__10420233_0.jpg" alt="Quiet morning glow" loading="lazy" decoding="async" tabindex="0">
+      </figure>
+    </div>
+  </div>
+
+  <audio id="bgm" loop preload="none" aria-hidden="true">
+    <source src="music/ssvid.app--.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ---------------- Lightbox HTML ---------------- -->
+  <div id="lbOverlay" class="lb-overlay" aria-hidden="true" role="dialog" aria-label="Image viewer">
+    <div class="lb-card" role="document">
+      <button class="lb-nav left" id="lbPrev" aria-label="ภาพก่อนหน้า">‹</button>
+      <img id="lbImage" class="lb-img" src="" alt="" tabindex="0">
+      <button class="lb-nav right" id="lbNext" aria-label="ภาพถัดไป">›</button>
+      <button class="lb-close" id="lbClose" aria-label="ปิด">✕</button>
+      <div class="lb-caption" id="lbCaption" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <script>
+    // ---------------- bubble cursor ----------------
+    const bubble = document.getElementById('cursorBubble');
+    document.addEventListener('mousemove', (e) => {
+      bubble.style.top = `${e.clientY}px`;
+      bubble.style.left = `${e.clientX}px`;
+    });
+
+    // ---------------- stars ----------------
+    const starsBg = document.createElement('div');
+starsBg.className = 'stars-bg';
+document.body.appendChild(starsBg);
+
+const numHearts = 50; // จำนวนหัวใจ
+
+for(let i = 0; i < numHearts; i++){
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    
+    // ตำแหน่งสุ่ม
+    heart.style.top = Math.random() * window.innerHeight + 'px';
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    
+    // ขนาดสุ่ม
+    const size = Math.random() * 10 + 5; // 5px - 15px
+    heart.style.width = size + 'px';
+    heart.style.height = size + 'px';
+    
+    heart.style.animationDuration = (Math.random() * 2 + 1) + 's'; // ความเร็วสุ่ม
+    
+    starsBg.appendChild(heart);
+}
+
+
+    // ---------------- bats ----------------
+    const numBats = window.innerWidth < 600 ? 6 : 12;
+    for (let i = 0; i < numBats; i++) {
+      const bat = document.createElement('div');
+      bat.className = 'bat';
+      bat.style.top = `${Math.random() * 90}%`;
+      bat.style.left = `-${Math.random() * 120 + 20}px`;
+      const duration = Math.random() * 8 + 4;
+      bat.style.animationDuration = `${duration}s`;
+      bat.style.animationDelay = `${Math.random() * 6}s`;
+      bat.style.transform = `rotate(${Math.random() * 360}deg)`;
+      document.body.appendChild(bat);
+    }
+
+    // ---------------- images setup ----------------
+    const galleryImages = Array.from(document.querySelectorAll('.gallery-item img'));
+    galleryImages.forEach((img, idx) => {
+      img.dataset.index = idx;
+      img.addEventListener('load', () => img.classList.add('loaded'));
+      img.addEventListener('error', () => { img.parentElement.style.display = 'none'; });
+
+      // keyboard support: Enter or Space opens lightbox
+      img.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(idx); }
+      });
+
+      img.addEventListener('click', () => openLightbox(idx));
+    });
+
+    // ---------------- carousel touch/drag support (lightweight) ----------------
+    (function enableCarouselDrag(){
+      const carousel = document.getElementById('carouselImages');
+      if(!carousel) return;
+      let isDown = false, startX, scrollLeft;
+
+      carousel.addEventListener('pointerdown', (e) => {
+        isDown = true;
+        carousel.style.cursor = 'grabbing';
+        startX = e.clientX;
+        scrollLeft = carousel.scrollLeft;
+        // pause css animation while dragging
+        carousel.style.animationPlayState = 'paused';
+        e.preventDefault();
+      });
+      window.addEventListener('pointerup', () => {
+        if(isDown) {
+          isDown = false;
+          carousel.style.cursor = '';
+          // resume animation
+          carousel.style.animationPlayState = '';
+        }
+      });
+      carousel.addEventListener('pointermove', (e) => {
+        if(!isDown) return;
+        const walk = (e.clientX - startX) * 1; // drag speed
+        carousel.scrollLeft = scrollLeft - walk;
+      });
+      // pause animation on touchstart to improve UX
+      carousel.addEventListener('touchstart', () => carousel.style.animationPlayState = 'paused', {passive:true});
+      carousel.addEventListener('touchend', () => carousel.style.animationPlayState = '', {passive:true});
+    })();
+
+    // ---------------- music toggle ----------------
+    function toggleMusic() {
+      const audio = document.getElementById('bgm');
+      const btn = document.getElementById('musicBtn');
+      if (audio.paused) {
+        audio.play().catch(() => {});
+        btn.textContent = '⏸️ หยุดเพลง';
+        btn.setAttribute('aria-pressed', 'true');
+      } else {
+        audio.pause();
+        btn.textContent = '🎵 เล่นเพลง';
+        btn.setAttribute('aria-pressed', 'false');
+      }
+    }
+
+    // ---------------- top button ----------------
+    const topBtn = document.getElementById('topBtn');
+    window.addEventListener('scroll', () => { topBtn.style.display = window.scrollY > 300 ? 'block' : 'none'; });
+    function scrollToTop(){ window.scrollTo({top:0, behavior:'smooth'}); }
+
+    // ---------------- Lightbox logic ----------------
+    const lbOverlay = document.getElementById('lbOverlay');
+    const lbImage = document.getElementById('lbImage');
+    const lbCaption = document.getElementById('lbCaption');
+    const lbClose = document.getElementById('lbClose');
+    const lbPrev = document.getElementById('lbPrev');
+    const lbNext = document.getElementById('lbNext');
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      // normalize index to range 0..galleryImages.length-1
+      currentIndex = ((index % galleryImages.length) + galleryImages.length) % galleryImages.length;
+      const imgEl = galleryImages[currentIndex];
+      if (!imgEl) return;
+      lbImage.src = imgEl.src;
+      lbImage.alt = imgEl.alt || '';
+      lbCaption.textContent = imgEl.alt || `Image ${currentIndex + 1}`;
+      lbOverlay.classList.add('open');
+      lbOverlay.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+      document.body.classList.add('lightbox-open'); // pause background animations
+
+      // preload neighbors
+      preloadIndex(currentIndex + 1);
+      preloadIndex(currentIndex - 1);
+
+      // focus management (simple)
+      lbClose.focus();
+    }
+
+    function closeLightbox() {
+      lbOverlay.classList.remove('open');
+      lbOverlay.setAttribute('aria-hidden','true');
+      lbImage.src = '';
+      lbCaption.textContent = '';
+      document.body.style.overflow = '';
+      document.body.classList.remove('lightbox-open');
+
+      // return focus to current thumbnail
+      const thumb = galleryImages[currentIndex]; if (thumb) thumb.focus();
+    }
+
+    function showNext(delta) {
+      currentIndex = (currentIndex + delta + galleryImages.length) % galleryImages.length;
+      const nextImg = galleryImages[currentIndex];
+      if (!nextImg) return;
+      lbImage.style.opacity = 0;
+      setTimeout(() => {
+        lbImage.src = nextImg.src;
+        lbImage.alt = nextImg.alt || '';
+        lbCaption.textContent = nextImg.alt || `Image ${currentIndex + 1}`;
+        preloadIndex(currentIndex + 1);
+        preloadIndex(currentIndex - 1);
+        lbImage.style.opacity = 1;
+      }, 140);
+    }
+
+    function preloadIndex(i) {
+      const idx = (i + galleryImages.length) % galleryImages.length;
+      const el = galleryImages[idx]; if (!el) return; const p = new Image(); p.src = el.src;
+    }
+
+    // Attach handlers
+    lbPrev.addEventListener('click', (e) => { e.stopPropagation(); showNext(-1); });
+    lbNext.addEventListener('click', (e) => { e.stopPropagation(); showNext(1); });
+    lbClose.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
+
+    lbOverlay.addEventListener('click', (e) => { if (e.target === lbOverlay) closeLightbox(); });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lbOverlay.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') showNext(1);
+      if (e.key === 'ArrowLeft') showNext(-1);
+    });
+
+    if (galleryImages.length <= 1) { lbPrev.style.display = 'none'; lbNext.style.display = 'none'; }
+
+    // Respect reduced motion user preference (safe fallback already in CSS)
+
+    // Accessibility: ensure images have meaningful alt (developer should customize per image)
+
+  </script>
+</body>
+</html>
